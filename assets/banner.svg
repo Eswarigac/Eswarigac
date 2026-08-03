@@ -1,94 +1,267 @@
-<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="350" viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f0c29">
-        <animate attributeName="stop-color" values="#0f0c29;#24243e;#0f0c29" dur="6s" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#0b0813">
+        <animate attributeName="stop-color" values="#0b0813;#150f24;#0b0813" dur="8s" repeatCount="indefinite" />
       </stop>
-      <stop offset="50%" stop-color="#302b63">
-        <animate attributeName="stop-color" values="#302b63;#1a1a40;#302b63" dur="6s" repeatCount="indefinite" />
+      <stop offset="50%" stop-color="#120c1f">
+        <animate attributeName="stop-color" values="#120c1f;#1e1336;#120c1f" dur="8s" repeatCount="indefinite" />
       </stop>
-      <stop offset="100%" stop-color="#24243e">
-        <animate attributeName="stop-color" values="#24243e;#0f0c29;#24243e" dur="6s" repeatCount="indefinite" />
+      <stop offset="100%" stop-color="#1d1430">
+        <animate attributeName="stop-color" values="#1d1430;#0d0918;#1d1430" dur="8s" repeatCount="indefinite" />
       </stop>
     </linearGradient>
 
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4facfe" />
-      <stop offset="100%" stop-color="#00f2fe" />
+    <!-- Brand Gradients -->
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3366" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#3b82f6" />
     </linearGradient>
 
-    <filter id="blurMe">
-      <feGaussianBlur stdDeviation="18" />
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <!-- Side faces shading gradients for 3D effect -->
+    <linearGradient id="sideLeftGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d1c4e" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#140b27" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="sideRightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#462c7a" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#1f113b" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    
+    <linearGradient id="reactGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#61dafb" />
+      <stop offset="100%" stop-color="#00d8ff" />
+    </linearGradient>
+
+    <linearGradient id="laravelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2d20" />
+      <stop offset="100%" stop-color="#ff7a00" />
+    </linearGradient>
+
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00758f" />
+      <stop offset="100%" stop-color="#f29111" />
+    </linearGradient>
+
+    <!-- Glow & Shadow Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
 
-    <clipPath id="frame">
-      <rect x="0" y="0" width="900" height="280" rx="18" />
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="10" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <clipPath id="roundedFrame">
+      <rect x="0" y="0" width="900" height="350" rx="20" />
     </clipPath>
   </defs>
 
-  <g clip-path="url(#frame)">
-    <rect width="900" height="280" fill="url(#bgGrad)" />
+  <!-- Main Container -->
+  <g clip-path="url(#roundedFrame)">
+    <rect width="900" height="350" fill="url(#bgGrad)" />
 
-    <!-- floating glow particles -->
-    <circle cx="120" cy="220" r="60" fill="#4facfe" opacity="0.25" filter="url(#blurMe)">
-      <animate attributeName="cy" values="220;170;220" dur="7s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="780" cy="60" r="70" fill="#a855f7" opacity="0.25" filter="url(#blurMe)">
-      <animate attributeName="cy" values="60;110;60" dur="8s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="650" cy="230" r="45" fill="#00f2fe" opacity="0.2" filter="url(#blurMe)">
-      <animate attributeName="cx" values="650;700;650" dur="9s" repeatCount="indefinite" />
-    </circle>
-
-    <!-- tiny drifting dots -->
-    <g fill="#4facfe">
-      <circle cx="60" cy="40" r="2.5">
-        <animate attributeName="cy" values="40;30;40" dur="3s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="850" cy="200" r="2" fill="#00f2fe">
-        <animate attributeName="cy" values="200;190;200" dur="4s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="500" cy="30" r="2" fill="#a855f7">
-        <animate attributeName="cy" values="30;20;30" dur="3.5s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="300" cy="250" r="2.5" fill="#4facfe">
-        <animate attributeName="cy" values="250;240;250" dur="5s" repeatCount="indefinite" />
-      </circle>
+    <!-- Grid Background (Isometric perspective lines) -->
+    <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+      <path d="M-100,50 L1000,400 M-100,100 L1000,450 M-100,0 L1000,350 M-100,-50 L1000,300 M-100,-100 L1000,250 M-100,150 L1000,500" />
+      <path d="M1000,-100 L-100,250 M1000,-50 L-100,300 M1000,0 L-100,350 M1000,50 L-100,400 M1000,100 L-100,450 M1000,150 L-100,500" />
     </g>
 
-    <!-- name -->
-    <text x="60" y="115" font-family="Segoe UI, Verdana, sans-serif" font-size="46" font-weight="700" fill="#ffffff">
-      Hi, I'm
-      <tspan fill="url(#textGrad)" font-weight="800"> Your Name</tspan>
-    </text>
+    <!-- Ambient Glow behind the 3D scene -->
+    <circle cx="680" cy="180" r="140" fill="#a855f7" opacity="0.25" filter="url(#neonGlow)">
+      <animate attributeName="opacity" values="0.25;0.35;0.25" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="720" cy="150" r="90" fill="#00f2fe" opacity="0.18" filter="url(#neonGlow)">
+      <animate attributeName="opacity" values="0.18;0.28;0.18" dur="4s" repeatCount="indefinite" />
+    </circle>
 
-    <!-- cycling role text -->
-    <text x="62" y="165" font-family="Consolas, monospace" font-size="24" fill="#e5e7eb">
-      <tspan opacity="0">
-        <animate attributeName="opacity" values="0;1;1;0;0;0;0;0" keyTimes="0;0.02;0.22;0.24;0.5;0.74;0.98;1" dur="12s" repeatCount="indefinite" />
-        Frontend Developer &#8226; React
-      </tspan>
-      <tspan x="62" opacity="0">
-        <animate attributeName="opacity" values="0;0;0;0;1;1;0;0" keyTimes="0;0.26;0.48;0.5;0.52;0.74;0.76;1" dur="12s" repeatCount="indefinite" />
-        Laravel &#8226; PHP &#8226; MySQL
-      </tspan>
-      <tspan x="62" opacity="0">
-        <animate attributeName="opacity" values="0;0;0;0;0;0;1;1" keyTimes="0;0.5;0.76;0.78;0.8;0.98;1;1" dur="12s" repeatCount="indefinite" />
-        Building clean, scalable web apps
-      </tspan>
-    </text>
+    <!-- LEFT SIDE: Text & Experience details -->
+    <g transform="translate(60, 0)">
+      <!-- Badge -->
+      <g transform="translate(0, 50)">
+        <rect width="180" height="28" rx="14" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-width="1" />
+        <circle cx="16" cy="14" r="5" fill="#a855f7">
+          <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <text x="32" y="19" font-family="Segoe UI, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#e9d5ff" letter-spacing="1">PORTFOLIO PROFILE</text>
+      </g>
 
-    <!-- blinking cursor -->
-    <rect x="480" y="145" width="4" height="26" fill="#00f2fe">
-      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" dur="1s" repeatCount="indefinite" />
-    </rect>
+      <!-- Main Heading (Title) -->
+      <text x="0" y="125" font-family="Segoe UI, -apple-system, sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+        Hi, I'm <tspan fill="url(#brandGrad)">ESWARI</tspan>
+      </text>
 
-    <!-- animated underline accent -->
-    <rect x="60" y="195" height="4" rx="2" fill="url(#textGrad)">
-      <animate attributeName="width" values="0;220;220;0" keyTimes="0;0.15;0.9;1" dur="12s" repeatCount="indefinite" />
-    </rect>
+      <!-- Subtitle -->
+      <text x="0" y="165" font-family="Segoe UI, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#e2e8f0">
+        Full Stack &amp; Mobile Developer
+      </text>
 
-    <!-- bottom hairline -->
-    <line x1="0" y1="279" x2="900" y2="279" stroke="#4facfe" stroke-opacity="0.3" stroke-width="2" />
+      <!-- Info Items -->
+      <g transform="translate(0, 200)" font-family="Segoe UI, -apple-system, sans-serif">
+        <!-- Experience -->
+        <g transform="translate(0, 0)">
+          <!-- Golden Cup Icon -->
+          <path d="M0,0 L12,0 A5,5 0 0,1 17,5 L17,8 A10,10 0 0,1 7,18 L7,22 L14,22 L14,24 L-2,24 L-2,22 L5,22 L5,18 A10,10 0 0,1 -5,8 L-5,5 A5,5 0 0,1 0,0 Z" fill="url(#goldGrad)" transform="translate(5, -12) scale(0.8)" />
+          <path d="M-5,5 L-9,5 A3,3 0 0,1 -12,2 L-12,-1 A3,3 0 0,1 -9,-4 L-5,-4 Z M17,5 L21,5 A3,3 0 0,0 24,2 L24,-1 A3,3 0 0,0 21,-4 L17,-4 Z" fill="url(#goldGrad)" transform="translate(5, -12) scale(0.8)" />
+          <text x="35" y="5" font-size="14" font-weight="600" fill="#fef08a">1+ Years of Active Experience</text>
+          <text x="35" y="24" font-size="13" fill="#94a3b8">Crafting websites, software, &amp; apps</text>
+        </g>
+
+        <!-- Dynamic Projects Count Badge -->
+        <g transform="translate(0, 48)">
+          <!-- Briefcase Icon -->
+          <path d="M2,6 L2,18 L18,18 L18,6 Z M6,6 L6,3 L14,3 L14,6 Z" fill="url(#reactGrad)" stroke="url(#reactGrad)" stroke-width="2" fill-opacity="0.2" transform="translate(2, -10)" />
+          <text x="35" y="5" font-size="14" font-weight="600" fill="#e2e8f0">E-Commerce, Web &amp; Mobile Projects</text>
+          <text x="35" y="24" font-size="13" fill="#94a3b8">Integrated Laravel Backends &amp; Vercel deploys</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT SIDE: The Interactive 3D Isometric Stack -->
+    <!-- We build columns of blocks (React Native, Laravel, MySQL) on a floating platform -->
+    <g transform="translate(680, 200)" filter="url(#softShadow)">
+      
+      <!-- Floating Platform Shadow -->
+      <path d="M-150,0 L0,-75 L150,0 L0,75 Z" fill="#000000" opacity="0.4" transform="translate(0, 35)" />
+      
+      <!-- Floating Main Isometric Base Grid (3D Layer) -->
+      <g>
+        <!-- Animation of the whole stack floating up and down -->
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="5s" repeatCount="indefinite" ease-in-out="true" />
+        
+        <!-- Platform Base Top -->
+        <path d="M-130,0 L0,-65 L130,0 L0,65 Z" fill="#1b1235" stroke="#4a3080" stroke-width="2.5" />
+        <!-- Platform Side Left -->
+        <path d="M-130,0 L-130,12 L0,77 L0,65 Z" fill="url(#sideLeftGrad)" />
+        <!-- Platform Side Right -->
+        <path d="M0,65 L0,77 L130,12 L130,0 Z" fill="url(#sideRightGrad)" />
+
+        <!-- Outer Neon Rim -->
+        <path d="M-130,0 L0,-65 L130,0 L0,65 Z" fill="none" stroke="url(#brandGrad)" stroke-width="1.5" opacity="0.6" filter="url(#neonGlow)" />
+
+        <!-- 3D BLOCK 1: DATABASE / BACKEND INFRASTRUCTURE (MySQL) (Bottom-Left) -->
+        <!-- Center offset: (-50, -10) -->
+        <g transform="translate(-45, 5)">
+          <animateTransform attributeName="transform" type="translate" values="-45,5; -45,1; -45,5" dur="4s" repeatCount="indefinite" />
+          <!-- Block Shadow on platform -->
+          <path d="M-35,0 L0,-17.5 L35,0 L0,17.5 Z" fill="#000000" opacity="0.3" transform="translate(0, 10)" />
+          <!-- Block Side Left -->
+          <path d="M-35,0 L-35,25 L0,42.5 L0,17.5 Z" fill="#09556b" />
+          <!-- Block Side Right -->
+          <path d="M0,17.5 L0,42.5 L35,25 L35,0 Z" fill="#ab6300" />
+          <!-- Block Top -->
+          <path d="M-35,0 L0,-17.5 L35,0 L0,17.5 Z" fill="url(#dbGrad)" />
+          
+          <!-- Cylindrical Database detail on top -->
+          <path d="M-15,-8 L0,-15 L15,-8 L0,-1 Z" fill="#00c0f0" opacity="0.8" />
+          <path d="M-15,-8 L-15,-3 L0,4 L0,-1 Z" fill="#0090b0" />
+          <path d="M0,-1 L0,4 L15,-3 L15,-8 Z" fill="#d27800" />
+
+          <path d="M-15,-14 L0,-21 L15,-14 L0,-7 Z" fill="#00d8ff" />
+          <path d="M-15,-14 L-15,-9 L0,-2 L0,-7 Z" fill="#00a8cc" />
+          <path d="M0,-7 L0,-2 L15,-9 L15,-14 Z" fill="#f29111" />
+          
+          <!-- Label -->
+          <text x="0" y="32" font-family="Segoe UI, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle" transform="skewY(15) scale(0.9)">MySQL</text>
+        </g>
+
+        <!-- 3D BLOCK 2: BACKEND ENGINE (Laravel & PHP) (Middle-Back) -->
+        <!-- Center offset: (0, -35) -->
+        <g transform="translate(0, -32)">
+          <animateTransform attributeName="transform" type="translate" values="0,-32; 0,-37; 0,-32" dur="4.5s" repeatCount="indefinite" />
+          <!-- Block Shadow -->
+          <path d="M-40,0 L0,-20 L40,0 L0,20 Z" fill="#000000" opacity="0.35" transform="translate(0, 15)" />
+          <!-- Block Side Left -->
+          <path d="M-40,0 L-40,30 L0,50 L0,20 Z" fill="#cc2418" />
+          <!-- Block Side Right -->
+          <path d="M0,20 L0,50 L40,30 L40,0 Z" fill="#e06900" />
+          <!-- Block Top -->
+          <path d="M-40,0 L0,-20 L40,0 L0,20 Z" fill="url(#laravelGrad)" />
+          
+          <!-- Floating Laravel Emblem Logo (Simplistic isometric logic) -->
+          <path d="M-10,-5 L0,-10 L10,-5 L0,0 Z" fill="#ffffff" opacity="0.9" />
+          <path d="M-10,-5 L-10,3 L0,8 L0,0 Z" fill="#e5e5e5" />
+          <path d="M0,0 L0,8 L10,3 L10,-5 Z" fill="#cccccc" />
+
+          <!-- Floating PHP Text over it -->
+          <text x="0" y="36" font-family="Segoe UI, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle" transform="skewY(15) scale(0.9)">Laravel &amp; PHP</text>
+        </g>
+
+        <!-- 3D BLOCK 3: FRONTEND & APPS (React Native, JS, Vercel) (Right-Front) -->
+        <!-- Center offset: (45, 10) -->
+        <g transform="translate(45, 10)">
+          <animateTransform attributeName="transform" type="translate" values="45,10; 45,7; 45,10" dur="3.8s" repeatCount="indefinite" />
+          <!-- Block Shadow -->
+          <path d="M-38,0 L0,-19 L38,0 L0,19 Z" fill="#000000" opacity="0.3" transform="translate(0, 10)" />
+          <!-- Block Side Left -->
+          <path d="M-38,0 L-38,28 L0,47 L0,19 Z" fill="#1b8ba8" />
+          <!-- Block Side Right -->
+          <path d="M0,19 L0,47 L38,28 L38,0 Z" fill="#056b82" />
+          <!-- Block Top -->
+          <path d="M-38,0 L0,-19 L38,0 L0,19 Z" fill="url(#reactGrad)" />
+          
+          <!-- React Orbit Ring representation (isometric projection) -->
+          <ellipse cx="0" cy="-6" rx="16" ry="6" fill="none" stroke="#ffffff" stroke-width="1.5" transform="rotate(-30, 0, -6)" />
+          <ellipse cx="0" cy="-6" rx="16" ry="6" fill="none" stroke="#ffffff" stroke-width="1.5" transform="rotate(30, 0, -6)" />
+          <circle cx="0" cy="-6" r="3" fill="#ffffff" />
+
+          <text x="0" y="34" font-family="Segoe UI, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle" transform="skewY(15) scale(0.9)">React Native / JS</text>
+        </g>
+
+        <!-- 3D FLOATING VERCEL LOGO -->
+        <g transform="translate(80, -50)">
+          <animateTransform attributeName="transform" type="translate" values="80,-50; 80,-58; 80,-50" dur="3.2s" repeatCount="indefinite" />
+          <!-- 3D Vercel Triangle -->
+          <!-- Top Face -->
+          <path d="M0,-18 L15,8 L-15,8 Z" fill="#ffffff" filter="url(#neonGlow)" />
+          <!-- Extruded Side -->
+          <path d="M-15,8 L15,8 L15,11 L-15,11 Z" fill="#999999" />
+          <!-- Small Label -->
+          <text x="0" y="21" font-family="Segoe UI, -apple-system, sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">VERCEL</text>
+        </g>
+
+        <!-- 3D FLOATING HTML/CSS HUB -->
+        <g transform="translate(-80, -30)">
+          <animateTransform attributeName="transform" type="translate" values="-80,-30; -80,-24; -80,-30" dur="4.2s" repeatCount="indefinite" />
+          <!-- Code tag diamond -->
+          <path d="M0,-15 L12,-5 L0,5 L-12,-5 Z" fill="#ff3366" opacity="0.9" />
+          <path d="M0,-15 L12,-5 L12,-1 L0,9 L-12,-1 L-12,-5 Z" fill="none" stroke="#ffffff" stroke-width="1.5" />
+          <text x="0" y="-3" font-family="Courier New, monospace" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">&lt;/&gt;</text>
+          <text x="0" y="18" font-family="Segoe UI, -apple-system, sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">HTML/CSS</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Interactive Neon particles drifting in 3D space -->
+    <g opacity="0.7">
+      <circle cx="500" cy="120" r="3" fill="#61dafb">
+        <animate attributeName="cy" values="120;105;120" dur="4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="820" cy="220" r="4" fill="#ff2d20">
+        <animate attributeName="cy" values="220;235;220" dur="5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="580" cy="280" r="3" fill="#a855f7">
+        <animate attributeName="cy" values="280;265;280" dur="3.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="750" cy="80" r="2.5" fill="#f59e0b">
+        <animate attributeName="cy" values="80;70;80" dur="6s" repeatCount="indefinite" />
+      </circle>
+    </g>
   </g>
 </svg>
