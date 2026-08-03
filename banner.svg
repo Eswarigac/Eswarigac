@@ -1,0 +1,94 @@
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c29">
+        <animate attributeName="stop-color" values="#0f0c29;#24243e;#0f0c29" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#302b63">
+        <animate attributeName="stop-color" values="#302b63;#1a1a40;#302b63" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#24243e">
+        <animate attributeName="stop-color" values="#24243e;#0f0c29;#24243e" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+
+    <filter id="blurMe">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+
+    <clipPath id="frame">
+      <rect x="0" y="0" width="900" height="280" rx="18" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="900" height="280" fill="url(#bgGrad)" />
+
+    <!-- floating glow particles -->
+    <circle cx="120" cy="220" r="60" fill="#4facfe" opacity="0.25" filter="url(#blurMe)">
+      <animate attributeName="cy" values="220;170;220" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="780" cy="60" r="70" fill="#a855f7" opacity="0.25" filter="url(#blurMe)">
+      <animate attributeName="cy" values="60;110;60" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="650" cy="230" r="45" fill="#00f2fe" opacity="0.2" filter="url(#blurMe)">
+      <animate attributeName="cx" values="650;700;650" dur="9s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- tiny drifting dots -->
+    <g fill="#4facfe">
+      <circle cx="60" cy="40" r="2.5">
+        <animate attributeName="cy" values="40;30;40" dur="3s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="850" cy="200" r="2" fill="#00f2fe">
+        <animate attributeName="cy" values="200;190;200" dur="4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="500" cy="30" r="2" fill="#a855f7">
+        <animate attributeName="cy" values="30;20;30" dur="3.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="300" cy="250" r="2.5" fill="#4facfe">
+        <animate attributeName="cy" values="250;240;250" dur="5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- name -->
+    <text x="60" y="115" font-family="Segoe UI, Verdana, sans-serif" font-size="46" font-weight="700" fill="#ffffff">
+      Hi, I'm
+      <tspan fill="url(#textGrad)" font-weight="800"> Your Name</tspan>
+    </text>
+
+    <!-- cycling role text -->
+    <text x="62" y="165" font-family="Consolas, monospace" font-size="24" fill="#e5e7eb">
+      <tspan opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0;0;0;0;0" keyTimes="0;0.02;0.22;0.24;0.5;0.74;0.98;1" dur="12s" repeatCount="indefinite" />
+        Frontend Developer &#8226; React
+      </tspan>
+      <tspan x="62" opacity="0">
+        <animate attributeName="opacity" values="0;0;0;0;1;1;0;0" keyTimes="0;0.26;0.48;0.5;0.52;0.74;0.76;1" dur="12s" repeatCount="indefinite" />
+        Laravel &#8226; PHP &#8226; MySQL
+      </tspan>
+      <tspan x="62" opacity="0">
+        <animate attributeName="opacity" values="0;0;0;0;0;0;1;1" keyTimes="0;0.5;0.76;0.78;0.8;0.98;1;1" dur="12s" repeatCount="indefinite" />
+        Building clean, scalable web apps
+      </tspan>
+    </text>
+
+    <!-- blinking cursor -->
+    <rect x="480" y="145" width="4" height="26" fill="#00f2fe">
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" dur="1s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- animated underline accent -->
+    <rect x="60" y="195" height="4" rx="2" fill="url(#textGrad)">
+      <animate attributeName="width" values="0;220;220;0" keyTimes="0;0.15;0.9;1" dur="12s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- bottom hairline -->
+    <line x1="0" y1="279" x2="900" y2="279" stroke="#4facfe" stroke-opacity="0.3" stroke-width="2" />
+  </g>
+</svg>

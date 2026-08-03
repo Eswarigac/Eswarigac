@@ -1,0 +1,15 @@
+<svg width="900" height="60" viewBox="0 0 900 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4facfe" stop-opacity="0" />
+      <stop offset="50%" stop-color="#4facfe" stop-opacity="1" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="28" width="900" height="2" fill="url(#divGrad)">
+    <animate attributeName="x" values="-900;900" dur="4s" repeatCount="indefinite" />
+  </rect>
+  <circle cx="450" cy="29" r="4" fill="#00f2fe">
+    <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
+  </circle>
+</svg>
