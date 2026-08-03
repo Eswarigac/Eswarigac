@@ -8,10 +8,11 @@
 
 ## 💫 About Me
 
-I am a passionate **Frontend & Full Stack Developer** with **over 1 year of professional experience** building high-performance web applications, websites, software solutions, mobile apps, and e-commerce platforms. 
+I am **Eswari**, a passionate **Frontend & Full Stack Developer** working at **Inpand Technologies** with **over 1 year of professional experience** building high-performance web applications, custom software, responsive websites, mobile apps, and feature-rich e-commerce platforms.
 
-My daily routine involves designing beautiful interactive interfaces and building robust backend engines that power them.
+My daily routine involves designing premium interactive interfaces and building robust backend engines that power them.
 
+- 🏢 **Professional Experience**: Developer at **Inpand Technologies** (1+ Years)
 - 📱 **Mobile App Development**: Building smooth cross-platform applications using **React Native**.
 - 💻 **Web Applications & Ecommerce**: Structuring applications with **HTML, CSS, JavaScript** and deploying production builds.
 - ⚙️ **Backend & Databases**: Orchestrating backend business systems using **Laravel, PHP**, and **MySQL**.
